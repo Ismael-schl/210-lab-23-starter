@@ -51,18 +51,15 @@ int main() {
 
     int choice = 0;
     while (choice != 4) {
-        int choice = main_menu();
+        choice = main_menu();
         if (choice == 1) {
             add_goat(myList, names, colors);
         }
         if (choice == 2) {
-
+            delete_goat(myList);
         }
         if (choice == 3) {
-
-        }
-        else {
-            return 0;
+            display_trip(myList);
         }
     }
 
@@ -87,6 +84,7 @@ void display_trip(list<Goat> trip) {
     for (Goat g : trip) {
         cout << "[" << i++ << "] " << g.get_name() << " (" << g.get_age() << ", " <<  g.get_color() <<")" << endl;
     }
+    cout << endl;
 }
 
 int select_goat(list<Goat> trip) {
