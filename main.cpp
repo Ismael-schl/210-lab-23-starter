@@ -47,9 +47,18 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
+    
 
 
 
     return 0;
+}
+
+void add_goat(list<Goat> &trip, string [], string []) {
+    Goat temp ()
+}
+
+void delete_goat(list<Goat> &trip) {
+
 }
 
