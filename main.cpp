@@ -12,19 +12,22 @@ int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
+
 int main_menu() {
     int choice = 0;
     //Engine loop
-    while (choice != 4) {
+    while (true) {
         cout << "*** GOAT MANAGER 3001 ***" << endl;
         cout << "[1] Add a goat" << endl << "[2] Delete a goat" << endl << "[3] List goats" << endl << "[4] Quit" << endl;
         cout << "Choice --> ";
         cin >> choice;
-        if (choice == 1 || choice == 2 || choice || 3 || choice == 4) {
+        if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
             return choice;
         }
         else {
-            cout << "Choice must be an integer between 1 and 4" << endl;
+            cout << "Choice must be an integer between 1 and 4, try again" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');
         }
     }
 };
