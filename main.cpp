@@ -72,6 +72,15 @@ void delete_goat(list<Goat> &trip) {
 void display_trip(list<Goat> trip) {
     int i = 1;
     for (Goat g : trip) {
-        cout << "[" << i++ << "] " << g.get_name() << " (" << g.get_age<< endl;;
+        cout << "[" << i++ << "] " << g.get_name() << " (" << g.get_age() << ", " <<  g.get_color() <<")" << endl;
     }
+}
+
+int select_goat(list<Goat> trip) {
+    int choice = 0;
+    cout << "Current list of goats: " << endl;
+    display_trip(trip);
+    cout << "Select a goat by entering its index, then press enter: ";
+    cin >> choice;
+    return choice;
 }
