@@ -46,8 +46,25 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
-
     
+    list<Goat> myList;
+
+    int choice = 0;
+    while (choice != 4) {
+        int choice = main_menu();
+        if (choice == 1) {
+            add_goat(myList, names, colors);
+        }
+        if (choice == 2) {
+
+        }
+        if (choice == 3) {
+
+        }
+        else {
+            return 0;
+        }
+    }
 
 
 
@@ -55,7 +72,7 @@ int main() {
 }
 
 void add_goat(list<Goat> &trip, string names[], string colors[]) {
-    int age = rand() % MAX_AGE + 1 ;
+    int age = rand() % (MAX_AGE + 1);
     int idxcolor  = rand() % SZ_COLORS;
     int idxname = rand() % SZ_NAMES;
     Goat temp;
@@ -63,10 +80,6 @@ void add_goat(list<Goat> &trip, string names[], string colors[]) {
     temp.set_color(colors[idxcolor]);
     temp.set_name(names[idxname]);
     trip.push_back(temp);
-}
-
-void delete_goat(list<Goat> &trip) {
-    trip.pop_back();
 }
 
 void display_trip(list<Goat> trip) {
@@ -83,4 +96,22 @@ int select_goat(list<Goat> trip) {
     cout << "Select a goat by entering its index, then press enter: ";
     cin >> choice;
     return choice;
+}
+
+void delete_goat(list<Goat> &trip) {
+   if (trip.empty()) {
+    cout << "Empty list, no goats to delete" << endl;
+    return;
+   }
+   int choice = select_goat(trip);
+   int i = 1;
+   auto it = trip.begin();
+   for (Goat g : trip) {
+    if (i == choice) {
+        break;
+    }
+    i++;
+    it++;
+   }
+   trip.erase(it);
 }
