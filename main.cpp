@@ -66,6 +66,12 @@ void add_goat(list<Goat> &trip, string names[], string colors[]) {
 }
 
 void delete_goat(list<Goat> &trip) {
-
+    trip.pop_back();
 }
 
+void display_trip(list<Goat> trip) {
+    int i = 1;
+    for (Goat g : trip) {
+        cout << "[" << i++ << "] " << g.get_name() << " (" << g.get_age<< endl;;
+    }
+}
