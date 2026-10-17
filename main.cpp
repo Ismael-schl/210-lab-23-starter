@@ -18,6 +18,8 @@ int main() {
     srand(time(0));
     bool again;
 
+    //Engine loop
+    while ()
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
     string names[SZ_NAMES];
